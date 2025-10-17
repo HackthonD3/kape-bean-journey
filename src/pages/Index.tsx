@@ -3,6 +3,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { ProductCard } from "@/components/ProductCard";
 import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -38,9 +39,12 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/20 shadow-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-golden bg-clip-text text-transparent">
-              Kape Kapi
-            </h1>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Kape Kapi Logo" className="h-10 md:h-12 w-auto" />
+              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-golden bg-clip-text text-transparent">
+                Kape Kapi
+              </h1>
+            </div>
             
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden md:flex">
@@ -332,33 +336,36 @@ const Index = () => {
       <SectionDivider />
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-coffee text-primary-foreground scroll-mt-20 shadow-[0_0_40px_rgba(218,165,32,0.2)]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center animate-fade-in-up">
+      <section id="contact" className="py-16 bg-card/30 scroll-mt-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img src="/src/assets/bean3.jpg" alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center animate-fade-in-up text-primary">
             We'd Love to Hear From You
           </h2>
-          <p className="text-center mb-12 text-lg">
+          <p className="text-center mb-12 text-lg text-foreground">
             For inquiries, orders, and partnership opportunities, please reach out to us:
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-primary/10 transition-all duration-300 group">
-              <Mail className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="font-semibold mb-2">Email</h3>
-              <a href="mailto:info@kapekapiexports.com" className="hover:text-accent transition-colors">
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 group">
+              <Mail className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform text-primary" />
+              <h3 className="font-semibold mb-2 text-foreground">Email</h3>
+              <a href="mailto:info@kapekapiexports.com" className="hover:text-accent transition-colors text-foreground">
                 info@kapekapiexports.com
               </a>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-primary/10 transition-all duration-300 group">
-              <Phone className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="font-semibold mb-2">Phone</h3>
-              <a href="tel:+911234567890" className="hover:text-accent transition-colors">
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 group">
+              <Phone className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform text-primary" />
+              <h3 className="font-semibold mb-2 text-foreground">Phone</h3>
+              <a href="tel:+911234567890" className="hover:text-accent transition-colors text-foreground">
                 +91 12345 67890
               </a>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-primary/10 transition-all duration-300 group">
-              <MapPin className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="font-semibold mb-2">Address</h3>
-              <p>Kushalnagar, Karnataka, India</p>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 group">
+              <MapPin className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform text-primary" />
+              <h3 className="font-semibold mb-2 text-foreground">Address</h3>
+              <p className="text-foreground">Kushalnagar, Karnataka, India</p>
             </div>
           </div>
         </div>

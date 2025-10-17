@@ -19,11 +19,11 @@ export const SectionDivider = () => {
         <img src={floatingBean} alt="" className="w-7 h-7 animate-float" style={{ animationDelay: "1.5s" }} />
       </div>
       <div className="container mx-auto px-4 flex items-center justify-center gap-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent flex-1" />
-        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-accent/50 shadow-[0_0_20px_rgba(218,165,32,0.4)] animate-pulse">
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent flex-1" />
+        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/50 shadow-[0_0_20px_rgba(139,69,19,0.4)] animate-pulse">
           <img src={randomImage} alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent flex-1" />
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent flex-1" />
       </div>
     </div>
   );
