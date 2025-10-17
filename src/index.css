@@ -8,44 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Coffee Brown Theme - All HSL values */
-    --background: 35 25% 96%;
-    --foreground: 25 35% 20%;
+    /* Deep Coffee Brown Theme - All HSL values */
+    --background: 25 30% 18%;
+    --foreground: 35 25% 92%;
 
-    --card: 30 20% 98%;
-    --card-foreground: 25 35% 20%;
+    --card: 25 25% 22%;
+    --card-foreground: 35 25% 92%;
 
-    --popover: 30 20% 98%;
-    --popover-foreground: 25 35% 20%;
+    --popover: 25 28% 20%;
+    --popover-foreground: 35 25% 92%;
 
-    /* Rich Coffee Brown */
-    --primary: 25 45% 30%;
-    --primary-foreground: 35 25% 96%;
+    /* Rich Golden Coffee */
+    --primary: 35 65% 58%;
+    --primary-foreground: 25 35% 12%;
 
-    /* Cream/Beige */
-    --secondary: 35 30% 88%;
-    --secondary-foreground: 25 45% 30%;
+    /* Warm Brown */
+    --secondary: 25 35% 28%;
+    --secondary-foreground: 35 25% 92%;
 
-    --muted: 35 20% 90%;
-    --muted-foreground: 25 20% 45%;
+    --muted: 25 20% 25%;
+    --muted-foreground: 35 15% 65%;
 
-    /* Golden Accent */
-    --accent: 35 60% 55%;
-    --accent-foreground: 25 45% 20%;
+    /* Bright Golden Accent */
+    --accent: 38 70% 62%;
+    --accent-foreground: 25 35% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 35 25% 96%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 25 45% 30%;
+    --border: 25 20% 30%;
+    --input: 25 20% 30%;
+    --ring: 35 65% 58%;
 
     --radius: 0.75rem;
 
     /* Coffee Gradients */
-    --gradient-coffee: linear-gradient(135deg, hsl(25, 45%, 30%), hsl(25, 50%, 25%));
-    --gradient-cream: linear-gradient(180deg, hsl(35, 25%, 96%), hsl(35, 30%, 92%));
-    --gradient-golden: linear-gradient(135deg, hsl(35, 60%, 55%), hsl(40, 65%, 50%));
+    --gradient-coffee: linear-gradient(135deg, hsl(25, 40%, 20%), hsl(30, 35%, 25%));
+    --gradient-cream: linear-gradient(180deg, hsl(25, 30%, 18%), hsl(25, 25%, 22%));
+    --gradient-golden: linear-gradient(135deg, hsl(35, 65%, 58%), hsl(40, 70%, 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(25, 35%, 16%), hsl(25, 30%, 20%));
   }
 
   .dark {

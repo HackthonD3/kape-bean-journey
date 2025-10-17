@@ -1,38 +1,102 @@
 import { CoffeeBeanSlider } from "@/components/CoffeeBeanSlider";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ProductCard } from "@/components/ProductCard";
-import { Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
+import { useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMobileMenuOpen(false);
+    }
+  };
+
+  const navItems = [
+    { label: "Soul", id: "soul" },
+    { label: "Purpose", id: "purpose" },
+    { label: "Vision", id: "vision" },
+    { label: "Origins", id: "origins" },
+    { label: "Certifications", id: "certifications" },
+    { label: "Products", id: "products" },
+    { label: "Contact", id: "contact" },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-cream">
-      {/* Header */}
-      <header className="bg-primary/5 py-6 sticky top-0 z-50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 flex justify-center">
-          <img src={logo} alt="Kape Kapi Export Logo" className="h-20 md:h-24" />
+    <div className="min-h-screen bg-gradient-hero">
+      {/* Navigation Header */}
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/20 shadow-lg">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-golden bg-clip-text text-transparent">
+              Kape Kapi
+            </h1>
+            
+            {/* Desktop Navigation */}
+            <NavigationMenu className="hidden md:flex">
+              <NavigationMenuList>
+                {navItems.map((item) => (
+                  <NavigationMenuItem key={item.id}>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle() + " cursor-pointer hover:bg-accent/20 hover:text-accent transition-all"}
+                      onClick={() => scrollToSection(item.id)}
+                    >
+                      {item.label}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-primary hover:text-accent transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <nav className="md:hidden mt-4 pb-4 animate-fade-in">
+              <div className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-left px-4 py-2 rounded-lg hover:bg-accent/20 hover:text-accent transition-all text-foreground"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="py-16 animate-fade-in-up">
-        <div className="container mx-auto px-4 text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Premium Indian Coffee Exports
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Sourced directly from Karnataka's finest coffee-growing regions
-          </p>
-        </div>
         <CoffeeBeanSlider />
       </section>
 
       <SectionDivider />
 
       {/* Section 1: The Soul of Kape Kapi */}
-      <section className="py-16 bg-card/30">
+      <section id="soul" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             The Soul of Kape Kapi
           </h2>
           <div className="space-y-6 text-foreground leading-relaxed">
@@ -55,12 +119,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 2: Purpose & Promise */}
-      <section className="py-16">
+      <section id="purpose" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Purpose & Promise
           </h2>
-          <div className="bg-gradient-coffee text-primary-foreground p-8 md:p-12 rounded-2xl shadow-xl">
+          <div className="bg-gradient-coffee text-primary-foreground p-8 md:p-12 rounded-2xl shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:shadow-[0_0_40px_rgba(218,165,32,0.5)] transition-all duration-500 border border-accent/30">
             <p className="text-lg leading-relaxed">
               Our mission is to deliver the finest Indian coffee to the world by building direct partnerships with farmers, promoting sustainable agriculture, and upholding the highest standards of quality, ethics, and traceability. We are committed to supporting sustainability certifications that protect the environment, empower farming communities, and ensure a transparent and responsible coffee supply chain.
             </p>
@@ -71,12 +135,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 3: Guiding Purpose */}
-      <section className="py-16 bg-card/30">
+      <section id="vision" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Guiding Purpose
           </h2>
-          <div className="bg-accent/10 border-2 border-accent/30 p-8 md:p-12 rounded-2xl">
+          <div className="bg-card/50 border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_35px_rgba(218,165,32,0.4)] transition-all duration-500">
             <p className="text-lg text-foreground leading-relaxed">
               Our vision is to become a global leader in ethically sourced Indian coffee — a company trusted for its integrity, quality, and commitment to sustainability. We aim to inspire a coffee industry where every cup contributes to a healthier planet, thriving communities, and a fairer future for all.
             </p>
@@ -87,9 +151,9 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 4: Signature Blends & Origins */}
-      <section className="py-16">
+      <section id="origins" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Signature Blends & Origins
           </h2>
           <div className="space-y-6">
@@ -168,9 +232,9 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 5: Certifications */}
-      <section className="py-16 bg-card/30">
+      <section id="certifications" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Certifications
           </h2>
           <div className="space-y-6 text-foreground leading-relaxed">
@@ -208,9 +272,9 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 6: Expertly Curated Range */}
-      <section className="py-16">
+      <section id="products" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up hover:text-accent transition-colors">
             Expertly Curated Range
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -268,31 +332,31 @@ const Index = () => {
       <SectionDivider />
 
       {/* Contact Section */}
-      <section className="py-16 bg-gradient-coffee text-primary-foreground">
+      <section id="contact" className="py-16 bg-gradient-coffee text-primary-foreground scroll-mt-20 shadow-[0_0_40px_rgba(218,165,32,0.2)]">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center animate-fade-in-up">
             We'd Love to Hear From You
           </h2>
           <p className="text-center mb-12 text-lg">
             For inquiries, orders, and partnership opportunities, please reach out to us:
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center">
-              <Mail className="w-12 h-12 mb-4" />
+            <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-primary/10 transition-all duration-300 group">
+              <Mail className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold mb-2">Email</h3>
               <a href="mailto:info@kapekapiexports.com" className="hover:text-accent transition-colors">
                 info@kapekapiexports.com
               </a>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <Phone className="w-12 h-12 mb-4" />
+            <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-primary/10 transition-all duration-300 group">
+              <Phone className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold mb-2">Phone</h3>
               <a href="tel:+911234567890" className="hover:text-accent transition-colors">
                 +91 12345 67890
               </a>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <MapPin className="w-12 h-12 mb-4" />
+            <div className="flex flex-col items-center text-center p-6 rounded-xl hover:bg-primary/10 transition-all duration-300 group">
+              <MapPin className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-semibold mb-2">Address</h3>
               <p>Kushalnagar, Karnataka, India</p>
             </div>
@@ -301,7 +365,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8">
+      <footer className="bg-secondary text-secondary-foreground py-8 border-t border-accent/30">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
             © {new Date().getFullYear()} Kape Kapi & Exports. All rights reserved.
