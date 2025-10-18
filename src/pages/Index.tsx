@@ -101,19 +101,21 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             The Soul of Kape Kapi
           </h2>
-          <div className="space-y-6 text-foreground leading-relaxed">
-            <p>
-              Kape Kapi & Exports is a coffee manufacturing and exporting company based in the heart of India's premier coffee-growing region — Karnataka, South India. We are committed to supporting local coffee farmers by sourcing our beans directly from them, ensuring fair practices and sustainable livelihoods. This direct relationship allows us to deliver the highest quality Indian coffee beans to both domestic and international markets.
-            </p>
-            <p>
-              With complete vertical integration and full ownership throughout our supply chain, we provide our clients with unmatched traceability and rigorous quality control at every stage — from farm to export.
-            </p>
-            <p>
-              Specializing in wholesale green coffee beans, Kape Kapi focuses exclusively on business-to-business bulk distribution. We take pride in supplying premium-grade Indian green coffee beans to roasters, importers, and specialty coffee businesses around the world.
-            </p>
-            <p>
-              At Kape Kapi, quality is more than a standard — it's a passion. Together with our dedicated team, we strive to produce a coffee experience that is distinctive, memorable, and truly exceptional. Because like our customers, we are passionate about coffee.
-            </p>
+          <div className="bg-card/80 backdrop-blur-sm border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_45px_rgba(218,165,32,0.5)] transition-all duration-500 animate-fade-in hover:scale-[1.02] group">
+            <div className="space-y-6 text-accent leading-relaxed group-hover:text-accent/90 transition-colors">
+              <p>
+                Kape Kapi & Exports is a coffee manufacturing and exporting company based in the heart of India's premier coffee-growing region — Karnataka, South India. We are committed to supporting local coffee farmers by sourcing our beans directly from them, ensuring fair practices and sustainable livelihoods. This direct relationship allows us to deliver the highest quality Indian coffee beans to both domestic and international markets.
+              </p>
+              <p>
+                With complete vertical integration and full ownership throughout our supply chain, we provide our clients with unmatched traceability and rigorous quality control at every stage — from farm to export.
+              </p>
+              <p>
+                Specializing in wholesale green coffee beans, Kape Kapi focuses exclusively on business-to-business bulk distribution. We take pride in supplying premium-grade Indian green coffee beans to roasters, importers, and specialty coffee businesses around the world.
+              </p>
+              <p>
+                At Kape Kapi, quality is more than a standard — it's a passion. Together with our dedicated team, we strive to produce a coffee experience that is distinctive, memorable, and truly exceptional. Because like our customers, we are passionate about coffee.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -239,34 +241,36 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Certifications
           </h2>
-          <div className="space-y-6 text-foreground leading-relaxed">
-            <p>
-              At Kape Kapi & Exports, we recognize the importance of ethical and environmentally responsible coffee production. Sustainability certifications play a vital role in ensuring that coffee is grown, processed, and traded in ways that protect ecosystems, support farmer livelihoods, and promote transparency across the supply chain.
-            </p>
-            <p>
-              We work closely with farms that follow sustainable practices and aim to meet globally recognized certification standards such as Rainforest Alliance, Fairtrade, Organic (India, USDA, EU), and 4C. These certifications verify:
-            </p>
-            <ul className="space-y-3 ml-6">
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">•</span>
-                <span>Environmentally sound farming methods</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">•</span>
-                <span>Fair labour conditions and community support</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">•</span>
-                <span>Traceability from farm to export</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-accent mt-1">•</span>
-                <span>Safe and sustainable post-harvest processing</span>
-              </li>
-            </ul>
-            <p className="italic text-primary">
-              By aligning with certified practices, we help build a more responsible coffee industry — one that benefits both people and the planet.
-            </p>
+          <div className="bg-card/80 backdrop-blur-sm border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_45px_rgba(218,165,32,0.5)] transition-all duration-500 animate-fade-in hover:scale-[1.02] group">
+            <div className="space-y-6 text-accent leading-relaxed group-hover:text-accent/90 transition-colors">
+              <p>
+                At Kape Kapi & Exports, we recognize the importance of ethical and environmentally responsible coffee production. Sustainability certifications play a vital role in ensuring that coffee is grown, processed, and traded in ways that protect ecosystems, support farmer livelihoods, and promote transparency across the supply chain.
+              </p>
+              <p>
+                We work closely with farms that follow sustainable practices and aim to meet globally recognized certification standards such as Rainforest Alliance, Fairtrade, Organic (India, USDA, EU), and 4C. These certifications verify:
+              </p>
+              <ul className="space-y-3 ml-6">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span>Environmentally sound farming methods</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span>Fair labour conditions and community support</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span>Traceability from farm to export</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span>Safe and sustainable post-harvest processing</span>
+                </li>
+              </ul>
+              <p className="italic text-accent font-semibold">
+                By aligning with certified practices, we help build a more responsible coffee industry — one that benefits both people and the planet.
+              </p>
+            </div>
           </div>
         </div>
       </section>

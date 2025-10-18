@@ -51,7 +51,7 @@ export const CoffeeBeanSlider = () => {
         <CarouselContent>
           {coffeeImages.map((image, index) => (
             <CarouselItem key={index} className="basis-full">
-              <Card className="overflow-hidden border-2 border-primary/30 bg-card/80 backdrop-blur-sm hover:border-accent hover:shadow-[0_0_20px_rgba(218,165,32,0.4)] transition-all duration-500 group">
+              <Card className="overflow-hidden border-2 border-primary/30 bg-card/80 backdrop-blur-sm hover:border-accent hover:shadow-[0_0_20px_rgba(218,165,32,0.4)] transition-all duration-500 group animate-[float_3s_ease-in-out_infinite]">
                 <div className="relative overflow-hidden">
                   <img
                     src={image.src}
