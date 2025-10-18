@@ -126,8 +126,8 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Purpose & Promise
           </h2>
-          <div className="bg-gradient-coffee text-background p-8 md:p-12 rounded-2xl shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:shadow-[0_0_50px_rgba(218,165,32,0.6)] transition-all duration-500 border-2 border-accent/40 animate-fade-in hover:scale-[1.02] group">
-            <p className="text-lg leading-relaxed text-background/90 group-hover:text-background transition-colors">
+          <div className="bg-card/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:shadow-[0_0_50px_rgba(218,165,32,0.6)] transition-all duration-500 border-2 border-accent/40 animate-fade-in hover:scale-[1.02] group">
+            <p className="text-lg leading-relaxed text-accent group-hover:text-accent/90 transition-colors">
               Our mission is to deliver the finest Indian coffee to the world by building direct partnerships with farmers, promoting sustainable agriculture, and upholding the highest standards of quality, ethics, and traceability. We are committed to supporting sustainability certifications that protect the environment, empower farming communities, and ensure a transparent and responsible coffee supply chain.
             </p>
           </div>
