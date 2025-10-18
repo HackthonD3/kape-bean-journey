@@ -59,8 +59,8 @@ export const CoffeeBeanSlider = () => {
                     className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   {index === 0 && (
-                    <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm p-4 rounded-2xl border-2 border-accent/50">
-                      <img src={logo} alt="Kape Kapi Logo" className="h-16 md:h-20 w-auto" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-md p-6 md:p-8 rounded-3xl border-2 border-accent/50 shadow-[0_0_40px_rgba(218,165,32,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">
+                      <img src={logo} alt="Kape Kapi Logo" className="h-32 md:h-40 w-auto drop-shadow-2xl" />
                     </div>
                   )}
                 </div>

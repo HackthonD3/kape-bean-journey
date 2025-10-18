@@ -88,7 +88,8 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 animate-fade-in-up">
+      <section className="py-16 animate-fade-in-up relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent animate-pulse"></div>
         <CoffeeBeanSlider />
       </section>
 
@@ -125,8 +126,8 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Purpose & Promise
           </h2>
-          <div className="bg-gradient-coffee text-primary-foreground p-8 md:p-12 rounded-2xl shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:shadow-[0_0_40px_rgba(218,165,32,0.5)] transition-all duration-500 border border-accent/30">
-            <p className="text-lg leading-relaxed">
+          <div className="bg-gradient-coffee text-background p-8 md:p-12 rounded-2xl shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:shadow-[0_0_50px_rgba(218,165,32,0.6)] transition-all duration-500 border-2 border-accent/40 animate-fade-in hover:scale-[1.02] group">
+            <p className="text-lg leading-relaxed text-background/90 group-hover:text-background transition-colors">
               Our mission is to deliver the finest Indian coffee to the world by building direct partnerships with farmers, promoting sustainable agriculture, and upholding the highest standards of quality, ethics, and traceability. We are committed to supporting sustainability certifications that protect the environment, empower farming communities, and ensure a transparent and responsible coffee supply chain.
             </p>
           </div>
@@ -141,8 +142,8 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Guiding Purpose
           </h2>
-          <div className="bg-card/50 border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_35px_rgba(218,165,32,0.4)] transition-all duration-500">
-            <p className="text-lg text-foreground leading-relaxed">
+          <div className="bg-card/50 border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_45px_rgba(218,165,32,0.5)] transition-all duration-500 animate-fade-in hover:scale-[1.02] group backdrop-blur-sm">
+            <p className="text-lg text-accent leading-relaxed group-hover:text-accent/90 transition-colors">
               Our vision is to become a global leader in ethically sourced Indian coffee — a company trusted for its integrity, quality, and commitment to sustainability. We aim to inspire a coffee industry where every cup contributes to a healthier planet, thriving communities, and a fairer future for all.
             </p>
           </div>
@@ -158,8 +159,8 @@ const Index = () => {
             Signature Blends & Origins
           </h2>
           <div className="space-y-6">
-            <div className="bg-card p-6 rounded-xl border-2 border-primary/20">
-              <h3 className="text-2xl font-semibold text-primary mb-4">Growing Regions</h3>
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(218,165,32,0.3)] group animate-fade-in">
+              <h3 className="text-2xl font-semibold text-accent mb-4 group-hover:scale-105 transition-transform">Growing Regions</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-1">•</span>
@@ -180,8 +181,8 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-xl border-2 border-primary/20">
-              <h3 className="text-2xl font-semibold text-primary mb-4">Taste Profile</h3>
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(218,165,32,0.3)] group animate-fade-in">
+              <h3 className="text-2xl font-semibold text-accent mb-4 group-hover:scale-105 transition-transform">Taste Profile</h3>
               <p className="text-foreground mb-4">
                 Indian Robusta from Karnataka is known for its strong, full-bodied taste. It offers:
               </p>
@@ -205,8 +206,8 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-xl border-2 border-primary/20">
-              <h3 className="text-2xl font-semibold text-primary mb-4">Processing Methods</h3>
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(218,165,32,0.3)] group animate-fade-in">
+              <h3 className="text-2xl font-semibold text-accent mb-4 group-hover:scale-105 transition-transform">Processing Methods</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-1">•</span>
