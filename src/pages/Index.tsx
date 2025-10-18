@@ -39,12 +39,9 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/20 shadow-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Kape Kapi Logo" className="h-10 md:h-12 w-auto" />
-              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-golden bg-clip-text text-transparent">
-                Kape Kapi
-              </h1>
-            </div>
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-golden bg-clip-text text-transparent">
+              Kape Kapi
+            </h1>
             
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden md:flex">

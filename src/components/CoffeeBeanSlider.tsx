@@ -39,30 +39,30 @@ export const CoffeeBeanSlider = () => {
   }, [api]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
-      <div className="flex justify-center mb-8">
-        <div className="bg-card/50 backdrop-blur-sm p-4 rounded-2xl border-2 border-primary/30 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.3)] animate-fade-in">
-          <img src={logo} alt="Kape Kapi Logo" className="h-24 md:h-32" />
-        </div>
-      </div>
+    <div className="w-full px-4">
       <Carousel
         setApi={setApi}
         opts={{
-          align: "start",
+          align: "center",
           loop: true,
         }}
         className="w-full"
       >
         <CarouselContent>
           {coffeeImages.map((image, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={index} className="basis-full">
               <Card className="overflow-hidden border-2 border-primary/30 bg-card/80 backdrop-blur-sm hover:border-accent hover:shadow-[0_0_20px_rgba(218,165,32,0.4)] transition-all duration-500 group">
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  {index === 0 && (
+                    <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm p-4 rounded-2xl border-2 border-accent/50">
+                      <img src={logo} alt="Kape Kapi Logo" className="h-16 md:h-20 w-auto" />
+                    </div>
+                  )}
                 </div>
               </Card>
             </CarouselItem>
