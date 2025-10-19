@@ -88,7 +88,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 animate-fade-in-up relative overflow-hidden">
+      <section className="py-12 animate-fade-in-up relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent animate-pulse"></div>
         <CoffeeBeanSlider />
       </section>
@@ -96,7 +96,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 1: The Soul of Kape Kapi */}
-      <section id="soul" className="py-16 scroll-mt-20">
+      <section id="soul" className="py-12 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             The Soul of Kape Kapi
@@ -123,7 +123,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 2: Purpose & Promise */}
-      <section id="purpose" className="py-16 scroll-mt-20">
+      <section id="purpose" className="py-12 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Purpose & Promise
@@ -139,7 +139,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 3: Guiding Purpose */}
-      <section id="vision" className="py-16 scroll-mt-20">
+      <section id="vision" className="py-12 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Guiding Purpose
@@ -155,7 +155,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 4: Signature Blends & Origins */}
-      <section id="origins" className="py-16 scroll-mt-20">
+      <section id="origins" className="py-12 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Signature Blends & Origins
@@ -236,7 +236,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 5: Certifications */}
-      <section id="certifications" className="py-16 scroll-mt-20">
+      <section id="certifications" className="py-12 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Certifications
@@ -278,7 +278,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 6: Expertly Curated Range */}
-      <section id="products" className="py-16 scroll-mt-20">
+      <section id="products" className="py-12 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up hover:text-accent transition-colors">
             Expertly Curated Range
@@ -338,7 +338,7 @@ const Index = () => {
       <SectionDivider />
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-card/30 scroll-mt-20 relative overflow-hidden">
+      <section id="contact" className="py-12 bg-card/30 scroll-mt-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img src="/src/assets/bean3.jpg" alt="" className="w-full h-full object-cover" />
         </div>

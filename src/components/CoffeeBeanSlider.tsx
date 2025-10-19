@@ -13,6 +13,10 @@ import bean3 from "@/assets/bean3.jpg";
 import bean4 from "@/assets/bean4.jpg";
 import bean5 from "@/assets/bean5.jpg";
 import bean6 from "@/assets/bean6.jpg";
+import bean7 from "@/assets/bean7.jpg";
+import bean8 from "@/assets/bean8.jpg";
+import bean9 from "@/assets/bean9.jpg";
+import bean10 from "@/assets/bean10.jpg";
 import logo from "@/assets/logo.png";
 
 const coffeeImages = [
@@ -22,6 +26,10 @@ const coffeeImages = [
   { src: bean4, alt: "Monsooned Malabar Beans" },
   { src: bean5, alt: "Coffee Cherries on Branch" },
   { src: bean6, alt: "Freshly Roasted Espresso" },
+  { src: bean7, alt: "Premium Roasted Coffee Beans Close-up" },
+  { src: bean8, alt: "Coffee Beans Pouring from Sack" },
+  { src: bean9, alt: "Assorted Coffee Bean Varieties" },
+  { src: bean10, alt: "Coffee Plantation Landscape" },
 ];
 
 export const CoffeeBeanSlider = () => {
@@ -56,7 +64,7 @@ export const CoffeeBeanSlider = () => {
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-110 transition-transform duration-700 animate-fade-in"
                   />
                   {index === 0 && (
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-md p-6 md:p-8 rounded-3xl border-2 border-accent/50 shadow-[0_0_40px_rgba(218,165,32,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">

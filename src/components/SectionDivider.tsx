@@ -9,7 +9,7 @@ export const SectionDivider = () => {
   const randomImage = coffeeImages[Math.floor(Math.random() * coffeeImages.length)];
   
   return (
-    <div className="relative py-16 overflow-hidden">
+    <div className="relative py-8 overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-30">
         <img src={floatingBean} alt="" className="w-10 h-10 animate-float" style={{ animationDelay: "0s" }} />
         <img src={floatingBean} alt="" className="w-6 h-6 animate-float" style={{ animationDelay: "0.3s" }} />
