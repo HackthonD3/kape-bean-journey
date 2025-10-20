@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
+import floatingBean from "@/assets/floating-bean.png";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -96,7 +97,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 1: The Soul of Kape Kapi */}
-      <section id="soul" className="py-12 scroll-mt-20">
+      <section id="soul" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             The Soul of Kape Kapi
@@ -123,7 +129,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 2: Purpose & Promise */}
-      <section id="purpose" className="py-12 scroll-mt-20">
+      <section id="purpose" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Purpose & Promise
@@ -139,7 +150,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 3: Guiding Purpose */}
-      <section id="vision" className="py-12 scroll-mt-20">
+      <section id="vision" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Guiding Purpose
@@ -155,7 +171,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 4: Signature Blends & Origins */}
-      <section id="origins" className="py-12 scroll-mt-20">
+      <section id="origins" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Signature Blends & Origins
@@ -236,7 +257,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 5: Certifications */}
-      <section id="certifications" className="py-12 scroll-mt-20">
+      <section id="certifications" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Certifications
@@ -278,7 +304,12 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 6: Expertly Curated Range */}
-      <section id="products" className="py-12 scroll-mt-20">
+      <section id="products" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up hover:text-accent transition-colors">
             Expertly Curated Range
