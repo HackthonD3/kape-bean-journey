@@ -72,11 +72,9 @@ export const CoffeeBeanSlider = () => {
                     alt={image.alt}
                     className="w-full h-[400px] md:h-[500px] object-cover animate-fade-pulse"
                   />
-                  {index === 0 && (
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-md p-6 md:p-8 rounded-3xl border-2 border-accent/50 shadow-[0_0_40px_rgba(218,165,32,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">
-                      <img src={logo} alt="Kape Kapi Logo" className="h-32 md:h-40 w-auto drop-shadow-2xl" />
-                    </div>
-                  )}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-md p-6 md:p-8 rounded-3xl border-2 border-accent/50 shadow-[0_0_40px_rgba(218,165,32,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">
+                    <img src={logo} alt="Kape Kapi Logo" className="h-32 md:h-40 w-auto drop-shadow-2xl" />
+                  </div>
                 </div>
               </Card>
             </CarouselItem>
