@@ -5,6 +5,16 @@ import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
 import floatingBean from "@/assets/floating-bean.png";
+import bean1 from "@/assets/bean1.jpg";
+import bean2 from "@/assets/bean2.jpg";
+import bean3 from "@/assets/bean3.jpg";
+import bean4 from "@/assets/bean4.jpg";
+import bean5 from "@/assets/bean5.jpg";
+import bean6 from "@/assets/bean6.jpg";
+import bean7 from "@/assets/bean7.jpg";
+import bean8 from "@/assets/bean8.jpg";
+import bean9 from "@/assets/bean9.jpg";
+import bean10 from "@/assets/bean10.jpg";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -89,8 +99,93 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-8 animate-fade-in-up">
-        <CoffeeBeanSlider />
+      <section className="py-16 px-4 relative overflow-hidden min-h-[600px] flex items-center">
+        {/* Decorative scattered images */}
+        <div className="absolute top-20 left-10 w-40 h-40 opacity-90">
+          <img src={bean1} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+        </div>
+        <div className="absolute top-40 left-1/4 w-32 h-32 opacity-80">
+          <img src={bean3} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
+        </div>
+        <div className="absolute bottom-32 left-20 w-48 h-32 opacity-90">
+          <img src={bean5} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+        </div>
+        <div className="absolute top-32 right-20 w-24 h-24 opacity-70">
+          <img src={bean7} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
+        </div>
+        <div className="absolute bottom-20 right-1/4 w-36 h-36 opacity-80">
+          <img src={bean8} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+        </div>
+        
+        {/* Decorative stars */}
+        <div className="absolute top-1/4 left-1/3 text-6xl text-muted opacity-20">✦</div>
+        <div className="absolute bottom-1/3 right-1/4 text-4xl text-muted opacity-20">✦</div>
+        
+        {/* Main hero content */}
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wide">Discover the Art of Coffee</p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              <span className="text-foreground">Premium</span><br />
+              <span className="text-foreground">Perfect Coffee</span><br />
+              <span className="text-accent" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
+            </h1>
+            
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="flex -space-x-3">
+                {[bean2, bean4, bean6, bean9, bean10].slice(0, 5).map((img, i) => (
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground">500+ Satisfied Customers</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Large coffee cup image */}
+        <div className="absolute bottom-0 right-10 w-80 h-80 hidden lg:block">
+          <img src={bean2} alt="" className="w-full h-full object-cover rounded-t-full shadow-2xl" />
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Ready to Explore Section */}
+      <section className="py-16 bg-gradient-cream">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm text-muted-foreground mb-3">Have A Good Day</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                Ready To Explore<br />Our Premium Coffee<br />Beans?
+              </h2>
+              <p className="text-foreground/80 leading-relaxed mb-8">
+                From morning brews to evening relaxations, our beans ensure every cup is a delight. Enjoy the perfect blend of flavor and aroma with every sip.
+              </p>
+              
+              {/* Product Showcase */}
+              <div className="bg-card border border-border rounded-lg p-6 inline-block">
+                <div className="flex items-center gap-4">
+                  <div className="w-24 h-32 bg-muted rounded-lg flex items-center justify-center">
+                    <img src={bean1} alt="" className="w-full h-full object-cover rounded-lg" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Signature Blend</h3>
+                    <p className="text-2xl font-bold text-accent">$20.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="w-full aspect-square">
+                <img src={bean2} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <SectionDivider />
