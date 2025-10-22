@@ -95,105 +95,105 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 px-4 relative overflow-hidden min-h-[600px] flex items-center">
-        {/* Decorative scattered images */}
-        <div className="absolute top-20 left-10 w-40 h-40 opacity-90">
-          <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+      <section className="py-16 px-4 relative overflow-visible min-h-[700px] flex items-center">
+        {/* Decorative coffee bean images - positioned strategically */}
+        <div className="absolute top-12 left-8 w-56 h-64 opacity-90 z-0">
+          <img src={heroBeans1} alt="" className="w-full h-full object-cover" style={{ clipPath: 'polygon(0 20%, 100% 0, 80% 100%, 0 80%)' }} />
         </div>
-        <div className="absolute top-40 left-1/4 w-32 h-32 opacity-80">
+        
+        <div className="absolute top-64 left-1/4 w-40 h-40 opacity-85 z-0">
+          <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-lg" />
+        </div>
+        
+        <div className="absolute bottom-16 left-12 w-64 h-48 opacity-90 z-0">
+          <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-2xl shadow-lg" />
+        </div>
+        
+        <div className="absolute top-20 right-8 w-32 h-32 opacity-80 z-0">
           <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
         </div>
-        <div className="absolute bottom-32 left-20 w-48 h-32 opacity-90">
-          <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
-        </div>
-        <div className="absolute top-32 right-20 w-24 h-24 opacity-70">
-          <img src={heroCoffeeCup} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
-        </div>
-        <div className="absolute bottom-20 right-1/4 w-36 h-36 opacity-80">
-          <img src={heroEspresso} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
-        </div>
         
-        {/* Decorative stars */}
-        <div className="absolute top-1/4 left-1/3 text-6xl text-muted opacity-20">✦</div>
-        <div className="absolute bottom-1/3 right-1/4 text-4xl text-muted opacity-20">✦</div>
+        {/* Decorative dots pattern */}
+        <div className="absolute top-1/4 right-1/3 w-32 h-32 opacity-10 z-0">
+          <div className="grid grid-cols-6 gap-2">
+            {Array.from({ length: 24 }).map((_, i) => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-muted-foreground"></div>
+            ))}
+          </div>
+        </div>
         
         {/* Main hero content */}
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wide">Discover the Art of Coffee</p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-              <span className="text-foreground">Premium</span><br />
-              <span className="text-foreground">Perfect Coffee</span><br />
-              <span className="text-accent" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
+        <div className="container mx-auto max-w-6xl relative z-20 pt-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <p className="text-sm text-muted-foreground mb-6 uppercase tracking-widest">Discover the Art of Coffee</p>
+            <h1 className="text-6xl md:text-8xl font-bold mb-10 leading-none">
+              <span className="text-foreground block">Premium</span>
+              <span className="text-foreground block">Perfect Coffee</span>
+              <span className="text-accent block mt-2" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
             </h1>
             
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="flex -space-x-3">
-                {[heroBeans1, heroCoffeeCup, heroBeans2, heroEspresso, heroBeans3].slice(0, 5).map((img, i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <div className="flex -space-x-4">
+                {[heroBeans1, heroBeans2, heroBeans3, heroBeans1, heroBeans2].map((img, i) => (
+                  <div key={i} className="w-12 h-12 rounded-full border-3 border-background overflow-hidden shadow-md">
                     <img src={img} alt="" className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground">500+ Satisfied Customers</p>
+              <p className="text-base text-muted-foreground font-medium">500+ Satisfied Customers</p>
             </div>
           </div>
           
           {/* Right side CTA */}
-          <div className="absolute top-0 right-0 bg-card border-2 border-accent rounded-lg p-6 shadow-lg max-w-xs hidden xl:block">
+          <div className="absolute top-8 right-4 bg-card border-2 border-accent rounded-xl p-6 shadow-xl max-w-xs hidden xl:block z-30">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-white text-xs">▶</span>
+              <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center">
+                <span className="text-white text-xs font-bold">▶</span>
               </div>
-              <span className="text-sm font-semibold text-foreground">Join Free</span>
+              <span className="text-sm font-bold text-foreground">Join Free</span>
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-2">
+            <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">
               Elevate Your<br />Coffee Experience
             </h3>
-            <button className="text-sm text-accent hover:underline">
+            <button className="text-sm text-accent font-semibold hover:underline">
               Discover More →
             </button>
           </div>
-        </div>
-        
-        {/* Large coffee cup image */}
-        <div className="absolute bottom-0 right-10 w-80 h-80 hidden lg:block">
-          <img src={heroLatteLarge} alt="" className="w-full h-full object-cover rounded-t-full shadow-2xl" />
         </div>
       </section>
 
       <SectionDivider />
 
       {/* Ready to Explore Section */}
-      <section className="py-16 bg-gradient-cream">
+      <section className="py-20 bg-gradient-cream">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-sm text-muted-foreground mb-3">Have A Good Day</p>
+              <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wide">Have A Good Day</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Ready To Explore<br />Our Premium Coffee<br />Beans?
               </h2>
-              <p className="text-foreground/80 leading-relaxed mb-8">
+              <p className="text-foreground/70 leading-relaxed mb-10 text-lg">
                 From morning brews to evening relaxations, our beans ensure every cup is a delight. Enjoy the perfect blend of flavor and aroma with every sip.
               </p>
               
               {/* Product Showcase */}
-              <div className="bg-card border border-border rounded-lg p-6 inline-block">
-                <div className="flex items-center gap-4">
-                  <div className="w-24 h-32 bg-muted rounded-lg flex items-center justify-center">
-                    <img src={heroCoffeeBag} alt="" className="w-full h-full object-cover rounded-lg" />
+              <div className="bg-card border border-border rounded-xl p-6 inline-block shadow-md">
+                <div className="flex items-center gap-5">
+                  <div className="w-28 h-36 bg-muted rounded-lg overflow-hidden">
+                    <img src={heroCoffeeBag} alt="" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Signature Blend</h3>
-                    <p className="text-2xl font-bold text-accent">$20.00</p>
+                    <h3 className="font-semibold text-foreground mb-2 text-lg">Signature Blend</h3>
+                    <p className="text-3xl font-bold text-accent">$20.00</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full aspect-square">
-                <img src={heroLatteLarge} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
+            <div className="relative flex justify-center">
+              <div className="w-96 h-96 relative">
+                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
               </div>
             </div>
           </div>
