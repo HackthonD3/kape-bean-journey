@@ -127,10 +127,28 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 relative overflow-hidden min-h-[800px] flex items-center bg-gradient-to-br from-background to-muted/20">
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="flex flex-col items-center space-y-12">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             
-            {/* Content */}
-            <div className="flex flex-col items-center space-y-8 text-center max-w-4xl">
+            {/* Left Side - Coffee Bean Images */}
+            <div className="relative h-[600px] hidden md:block">
+              {/* Top left scattered beans */}
+              <div className="absolute top-0 left-0 w-48 h-56 animate-fade-in">
+                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
+              </div>
+              
+              {/* Center circular bean image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 animate-scale-in">
+                <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
+              </div>
+              
+              {/* Bottom left large bean bag */}
+              <div className="absolute bottom-0 left-0 w-80 h-64 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
+              </div>
+            </div>
+            
+            {/* Right Side - Content */}
+            <div className="flex flex-col items-start space-y-8 relative">
               <p className="text-sm text-muted-foreground uppercase tracking-[0.3em] animate-fade-in">
                 Discover the Art of Coffee
               </p>
@@ -143,15 +161,17 @@ const Index = () => {
               
               {/* Customer satisfaction section */}
               <div className="flex items-center gap-6 pt-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="flex -space-x-3">
+                  {[heroBeans1, heroBeans2, heroBeans3].map((img, i) => (
+                    <div key={i} className="w-14 h-14 rounded-full border-4 border-background overflow-hidden shadow-lg">
+                      <img src={img} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
                 <p className="text-lg text-foreground font-semibold">
                   500+ Satisfied Customers
                 </p>
               </div>
-            </div>
-            
-            {/* Coffee Bean Image Carousel */}
-            <div className="w-full mt-12">
-              <CoffeeBeanSlider />
             </div>
             
           </div>
@@ -177,7 +197,7 @@ const Index = () => {
               <div className="bg-card border border-border rounded-xl p-6 inline-block shadow-md animate-fade-in hover-scale">
                 <div className="flex items-center justify-center">
                   <div className="w-48 h-48 rounded-lg overflow-hidden">
-                    <img src={heroBeans3} alt="Premium Coffee Beans" className="w-full h-full object-cover" />
+                    <img src={heroBeans1} alt="Premium Coffee Beans" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -185,7 +205,7 @@ const Index = () => {
             
             <div className="relative flex justify-center">
               <div className="w-96 h-96 relative">
-                <img src={heroBeans2} alt="Premium Coffee Beans" className="w-full h-full object-cover rounded-full shadow-2xl" />
+                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
               </div>
             </div>
           </div>
