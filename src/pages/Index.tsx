@@ -304,64 +304,96 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 6: Expertly Curated Range */}
-      <section id="products" className="py-12 scroll-mt-20 relative">
+      <section id="products" className="py-12 scroll-mt-20 relative overflow-hidden">
         <img 
           src={floatingBean} 
           alt="" 
-          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-float opacity-60" 
         />
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 max-w-7xl">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up hover:text-accent transition-colors">
             Expertly Curated Range
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ProductCard
-              title="Robusta Coffee – Naturals"
-              items={[
-                "Robusta Coffee Cherry AAA",
-                "Robusta Coffee Cherry AA",
-                "Robusta Coffee Cherry A",
-                "Robusta Coffee Cherry AB",
-                "Robusta Coffee Cherry PB",
-                "Robusta Coffee Cherry C",
-              ]}
-            />
-            <ProductCard
-              title="Robusta Coffee – Washed"
-              items={[
-                "Robusta Parchment AA",
-                "Robusta Parchment A",
-                "Robusta Parchment AB",
-                "Robusta Parchment PB",
-                "Robusta Parchment C",
-              ]}
-            />
-            <ProductCard
-              title="Arabica Coffee – Naturals"
-              items={[
-                "Arabica Coffee Cherry AAA",
-                "Arabica Coffee Cherry AA",
-                "Arabica Coffee Cherry A",
-                "Arabica Coffee Cherry AB",
-                "Arabica Coffee Cherry PB",
-                "Arabica Coffee Cherry C",
-              ]}
-            />
-            <ProductCard
-              title="Arabica Coffee – Washed"
-              items={[
-                "Plantation AA",
-                "Plantation A",
-                "Plantation AB",
-              ]}
-            />
-            <ProductCard
-              title="Specialty Coffees"
-              items={[
-                "Kapi Royale",
-                "Monsoon Malabar Coffee",
-              ]}
-            />
+          
+          {/* Bento-style grid layout */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {/* Large card - spans 2 columns */}
+            <div className="md:col-span-2 opacity-0 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+              <div className="h-full bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-accent/40 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
+                <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors mb-6">Robusta Coffee – Naturals</h3>
+                <ul className="space-y-3">
+                  {["Robusta Coffee Cherry AAA", "Robusta Coffee Cherry AA", "Robusta Coffee Cherry A", "Robusta Coffee Cherry AB", "Robusta Coffee Cherry PB", "Robusta Coffee Cherry C"].map((item, index) => (
+                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-all duration-300 hover:translate-x-2">
+                      <span className="text-accent mt-1 text-lg">●</span>
+                      <span className="text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Medium cards */}
+            <div className="md:col-span-2 opacity-0 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              <div className="h-full bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm border-2 border-primary/30 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
+                <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors mb-6">Robusta Coffee – Washed</h3>
+                <ul className="space-y-3">
+                  {["Robusta Parchment AA", "Robusta Parchment A", "Robusta Parchment AB", "Robusta Parchment PB", "Robusta Parchment C"].map((item, index) => (
+                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-all duration-300 hover:translate-x-2">
+                      <span className="text-accent mt-1 text-lg">●</span>
+                      <span className="text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Tall card */}
+            <div className="md:col-span-2 opacity-0 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              <div className="h-full bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm border-2 border-accent/50 hover:border-accent hover:shadow-[0_0_35px_rgba(218,165,32,0.6)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
+                <h3 className="text-2xl font-bold text-accent group-hover:scale-105 transition-transform mb-6">Arabica Coffee – Naturals</h3>
+                <ul className="space-y-3">
+                  {["Arabica Coffee Cherry AAA", "Arabica Coffee Cherry AA", "Arabica Coffee Cherry A", "Arabica Coffee Cherry AB", "Arabica Coffee Cherry PB", "Arabica Coffee Cherry C"].map((item, index) => (
+                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-all duration-300 hover:translate-x-2">
+                      <span className="text-accent mt-1 text-lg">●</span>
+                      <span className="text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Small card */}
+            <div className="opacity-0 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+              <div className="h-full bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-primary/30 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-6 group hover:scale-[1.02]">
+                <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors mb-4">Arabica Coffee – Washed</h3>
+                <ul className="space-y-2">
+                  {["Plantation AA", "Plantation A", "Plantation AB"].map((item, index) => (
+                    <li key={index} className="text-foreground flex items-start gap-2 hover:text-accent transition-all duration-300 hover:translate-x-2">
+                      <span className="text-accent mt-1">●</span>
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Featured card */}
+            <div className="opacity-0 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+              <div className="h-full bg-gradient-to-br from-accent/20 to-accent/10 backdrop-blur-sm border-2 border-accent hover:border-accent hover:shadow-[0_0_40px_rgba(218,165,32,0.7)] transition-all duration-500 rounded-2xl p-6 group hover:scale-[1.05] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent animate-pulse"></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-accent group-hover:scale-105 transition-transform mb-4">Specialty Coffees</h3>
+                  <ul className="space-y-2">
+                    {["Kapi Royale", "Monsoon Malabar Coffee"].map((item, index) => (
+                      <li key={index} className="text-foreground flex items-start gap-2 hover:text-accent transition-all duration-300 hover:translate-x-2">
+                        <span className="text-accent mt-1">●</span>
+                        <span className="text-sm font-semibold">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
