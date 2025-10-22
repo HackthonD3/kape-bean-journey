@@ -4,13 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
-import heroBeans1 from "@/assets/hero-beans-1.jpg";
-import heroCoffeeCup from "@/assets/hero-coffee-cup.jpg";
-import heroBeans2 from "@/assets/hero-beans-2.jpg";
-import heroEspresso from "@/assets/hero-espresso.jpg";
-import heroBeans3 from "@/assets/hero-beans-3.jpg";
-import heroLatteLarge from "@/assets/hero-latte-large.jpg";
-import heroCoffeeBag from "@/assets/hero-coffee-bag.jpg";
+import floatingBean from "@/assets/floating-bean.png";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -41,17 +35,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-hero">
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
-        <div className="container mx-auto px-4 py-3">
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/20 shadow-lg">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Kape Kapi Logo" className="h-12 w-auto" />
-              <h1 className="text-2xl md:text-3xl font-bold text-primary">
-                Kape Kapi
-              </h1>
-            </div>
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-golden bg-clip-text text-transparent">
+              Kape Kapi
+            </h1>
             
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden md:flex">
@@ -59,7 +50,7 @@ const Index = () => {
                 {navItems.map((item) => (
                   <NavigationMenuItem key={item.id}>
                     <NavigationMenuLink
-                      className={navigationMenuTriggerStyle() + " cursor-pointer hover:bg-accent/10 hover:text-accent transition-all"}
+                      className={navigationMenuTriggerStyle() + " cursor-pointer hover:bg-accent/20 hover:text-accent transition-all"}
                       onClick={() => scrollToSection(item.id)}
                     >
                       {item.label}
@@ -78,150 +69,46 @@ const Index = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation Slider */}
+          {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <>
-              {/* Backdrop */}
-              <div 
-                className="fixed inset-0 bg-black/50 z-40 animate-fade-in md:hidden"
-                onClick={() => setMobileMenuOpen(false)}
-              />
-              
-              {/* Sliding Menu */}
-              <nav className="fixed top-0 right-0 h-full w-64 bg-card shadow-2xl z-50 animate-slide-in-right md:hidden">
-                <div className="flex flex-col h-full">
-                  {/* Menu Header */}
-                  <div className="flex items-center justify-between p-4 border-b border-border">
-                    <div className="flex items-center gap-2">
-                      <img src={logo} alt="Kape Kapi" className="h-8 w-auto" />
-                      <span className="font-bold text-primary">Menu</span>
-                    </div>
-                    <button
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-foreground hover:text-accent transition-colors"
-                    >
-                      <X size={24} />
-                    </button>
-                  </div>
-                  
-                  {/* Menu Items */}
-                  <div className="flex flex-col gap-1 p-4 overflow-y-auto">
-                    {navItems.map((item, index) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className="text-left px-4 py-3 rounded-lg hover:bg-muted hover:text-accent transition-all text-foreground font-medium animate-fade-in"
-                        style={{ animationDelay: `${index * 0.05}s` }}
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </nav>
-            </>
+            <nav className="md:hidden mt-4 pb-4 animate-fade-in">
+              <div className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-left px-4 py-2 rounded-lg hover:bg-accent/20 hover:text-accent transition-all text-foreground"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </nav>
           )}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 relative overflow-hidden min-h-[800px] flex items-center bg-gradient-to-br from-background to-muted/20">
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Side - Coffee Bean Images */}
-            <div className="relative h-[600px] hidden md:block">
-              {/* Top left scattered beans */}
-              <div className="absolute top-0 left-0 w-48 h-56 animate-fade-in">
-                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
-              </div>
-              
-              {/* Center circular bean image */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 animate-scale-in">
-                <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
-              </div>
-              
-              {/* Bottom left large bean bag */}
-              <div className="absolute bottom-0 left-0 w-80 h-64 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
-              </div>
-            </div>
-            
-            {/* Right Side - Content */}
-            <div className="flex flex-col items-start space-y-8 relative">
-              <p className="text-sm text-muted-foreground uppercase tracking-[0.3em] animate-fade-in">
-                Discover the Art of Coffee
-              </p>
-              
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <span className="text-foreground block">Premium</span>
-                <span className="text-foreground block">Perfect Coffee</span>
-                <span className="text-accent block mt-2" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
-              </h1>
-              
-              {/* Customer satisfaction section */}
-              <div className="flex items-center gap-6 pt-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="flex -space-x-3">
-                  {[heroBeans1, heroBeans2, heroBeans3].map((img, i) => (
-                    <div key={i} className="w-14 h-14 rounded-full border-4 border-background overflow-hidden shadow-lg">
-                      <img src={img} alt="" className="w-full h-full object-cover" />
-                    </div>
-                  ))}
-                </div>
-                <p className="text-lg text-foreground font-semibold">
-                  500+ Satisfied Customers
-                </p>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider />
-
-      {/* Ready to Explore Section */}
-      <section className="py-20 bg-gradient-cream">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wide">Have A Good Day</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Ready To Explore<br />Our Premium Coffee<br />Beans?
-              </h2>
-              <p className="text-foreground/70 leading-relaxed mb-10 text-lg">
-                From morning brews to evening relaxations, our beans ensure every cup is a delight. Enjoy the perfect blend of flavor and aroma with every sip.
-              </p>
-              
-              {/* Product Showcase */}
-              <div className="bg-card border border-border rounded-xl p-6 inline-block shadow-md animate-fade-in hover-scale">
-                <div className="flex items-center justify-center">
-                  <div className="w-48 h-48 rounded-lg overflow-hidden">
-                    <img src={heroBeans1} alt="Premium Coffee Beans" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative flex justify-center">
-              <div className="w-96 h-96 relative">
-                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="py-12 animate-fade-in-up relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent animate-pulse"></div>
+        <CoffeeBeanSlider />
       </section>
 
       <SectionDivider />
 
       {/* Section 1: The Soul of Kape Kapi */}
-      <section id="soul" className="py-16 scroll-mt-20 bg-gradient-cream">
+      <section id="soul" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             The Soul of Kape Kapi
           </h2>
-          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
-            <div className="space-y-6 text-foreground leading-relaxed">
+          <div className="bg-card/80 backdrop-blur-sm border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_45px_rgba(218,165,32,0.5)] transition-all duration-500 animate-fade-in hover:scale-[1.02] group">
+            <div className="space-y-6 text-accent leading-relaxed group-hover:text-accent/90 transition-colors">
               <p>
                 Kape Kapi & Exports is a coffee manufacturing and exporting company based in the heart of India's premier coffee-growing region — Karnataka, South India. We are committed to supporting local coffee farmers by sourcing our beans directly from them, ensuring fair practices and sustainable livelihoods. This direct relationship allows us to deliver the highest quality Indian coffee beans to both domestic and international markets.
               </p>
@@ -242,13 +129,18 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 2: Purpose & Promise */}
-      <section id="purpose" className="py-16 scroll-mt-20 bg-background">
+      <section id="purpose" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Purpose & Promise
           </h2>
-          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
-            <p className="text-lg leading-relaxed text-foreground">
+          <div className="bg-card/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-[0_0_30px_rgba(218,165,32,0.3)] hover:shadow-[0_0_50px_rgba(218,165,32,0.6)] transition-all duration-500 border-2 border-accent/40 animate-fade-in hover:scale-[1.02] group">
+            <p className="text-lg leading-relaxed text-accent group-hover:text-accent/90 transition-colors">
               Our mission is to deliver the finest Indian coffee to the world by building direct partnerships with farmers, promoting sustainable agriculture, and upholding the highest standards of quality, ethics, and traceability. We are committed to supporting sustainability certifications that protect the environment, empower farming communities, and ensure a transparent and responsible coffee supply chain.
             </p>
           </div>
@@ -258,13 +150,18 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 3: Guiding Purpose */}
-      <section id="vision" className="py-16 scroll-mt-20 bg-gradient-cream">
+      <section id="vision" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Guiding Purpose
           </h2>
-          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
-            <p className="text-lg text-foreground leading-relaxed">
+          <div className="bg-card/50 border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_45px_rgba(218,165,32,0.5)] transition-all duration-500 animate-fade-in hover:scale-[1.02] group backdrop-blur-sm">
+            <p className="text-lg text-accent leading-relaxed group-hover:text-accent/90 transition-colors">
               Our vision is to become a global leader in ethically sourced Indian coffee — a company trusted for its integrity, quality, and commitment to sustainability. We aim to inspire a coffee industry where every cup contributes to a healthier planet, thriving communities, and a fairer future for all.
             </p>
           </div>
@@ -274,14 +171,19 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 4: Signature Blends & Origins */}
-      <section id="origins" className="py-16 scroll-mt-20 bg-background">
+      <section id="origins" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Signature Blends & Origins
           </h2>
           <div className="space-y-6">
-            <div className="bg-card p-6 rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale">
-              <h3 className="text-2xl font-semibold text-accent mb-4">Growing Regions</h3>
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(218,165,32,0.3)] group animate-fade-in">
+              <h3 className="text-2xl font-semibold text-accent mb-4 group-hover:scale-105 transition-transform">Growing Regions</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-1">•</span>
@@ -302,8 +204,8 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale">
-              <h3 className="text-2xl font-semibold text-accent mb-4">Taste Profile</h3>
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(218,165,32,0.3)] group animate-fade-in">
+              <h3 className="text-2xl font-semibold text-accent mb-4 group-hover:scale-105 transition-transform">Taste Profile</h3>
               <p className="text-foreground mb-4">
                 Indian Robusta from Karnataka is known for its strong, full-bodied taste. It offers:
               </p>
@@ -327,8 +229,8 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale">
-              <h3 className="text-2xl font-semibold text-accent mb-4">Processing Methods</h3>
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_rgba(218,165,32,0.3)] group animate-fade-in">
+              <h3 className="text-2xl font-semibold text-accent mb-4 group-hover:scale-105 transition-transform">Processing Methods</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-1">•</span>
@@ -355,13 +257,18 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 5: Certifications */}
-      <section id="certifications" className="py-16 scroll-mt-20 bg-gradient-cream">
+      <section id="certifications" className="py-12 scroll-mt-20 relative">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-[spin_20s_linear_infinite] opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center animate-fade-in-up hover:text-accent transition-colors">
             Certifications
           </h2>
-          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
-            <div className="space-y-6 text-foreground leading-relaxed">
+          <div className="bg-card/80 backdrop-blur-sm border-2 border-accent/50 p-8 md:p-12 rounded-2xl shadow-[0_0_25px_rgba(218,165,32,0.2)] hover:shadow-[0_0_45px_rgba(218,165,32,0.5)] transition-all duration-500 animate-fade-in hover:scale-[1.02] group">
+            <div className="space-y-6 text-accent leading-relaxed group-hover:text-accent/90 transition-colors">
               <p>
                 At Kape Kapi & Exports, we recognize the importance of ethical and environmentally responsible coffee production. Sustainability certifications play a vital role in ensuring that coffee is grown, processed, and traded in ways that protect ecosystems, support farmer livelihoods, and promote transparency across the supply chain.
               </p>
@@ -397,9 +304,14 @@ const Index = () => {
       <SectionDivider />
 
       {/* Section 6: Expertly Curated Range */}
-      <section id="products" className="py-16 scroll-mt-20 bg-background">
+      <section id="products" className="py-12 scroll-mt-20 relative overflow-hidden">
+        <img 
+          src={floatingBean} 
+          alt="" 
+          className="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 animate-float opacity-60" 
+        />
         <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center animate-fade-in-up hover:text-accent transition-colors">
             Expertly Curated Range
           </h2>
           
@@ -407,11 +319,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Large card - spans 2 columns */}
             <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-              <div className="h-full bg-card border border-border hover:shadow-lg transition-shadow duration-300 rounded-lg p-8">
-                <h3 className="text-2xl font-bold text-primary mb-6">Robusta Coffee – Naturals</h3>
+              <div className="h-full bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-accent/40 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
+                <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors mb-6">Robusta Coffee – Naturals</h3>
                 <ul className="space-y-3">
                   {["Robusta Coffee Cherry AAA", "Robusta Coffee Cherry AA", "Robusta Coffee Cherry A", "Robusta Coffee Cherry AB", "Robusta Coffee Cherry PB", "Robusta Coffee Cherry C"].map((item, index) => (
-                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-colors">
+                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-all duration-300 hover:translate-x-2">
                       <span className="text-accent mt-1 text-lg">●</span>
                       <span className="text-base">{item}</span>
                     </li>
@@ -422,11 +334,11 @@ const Index = () => {
 
             {/* Medium cards */}
             <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              <div className="h-full bg-card border border-border hover:shadow-lg transition-shadow duration-300 rounded-lg p-8">
-                <h3 className="text-2xl font-bold text-primary mb-6">Robusta Coffee – Washed</h3>
+              <div className="h-full bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm border-2 border-primary/30 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
+                <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors mb-6">Robusta Coffee – Washed</h3>
                 <ul className="space-y-3">
                   {["Robusta Parchment AA", "Robusta Parchment A", "Robusta Parchment AB", "Robusta Parchment PB", "Robusta Parchment C"].map((item, index) => (
-                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-colors">
+                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-all duration-300 hover:translate-x-2">
                       <span className="text-accent mt-1 text-lg">●</span>
                       <span className="text-base">{item}</span>
                     </li>
@@ -437,11 +349,11 @@ const Index = () => {
 
             {/* Tall card */}
             <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-              <div className="h-full bg-card border border-border hover:shadow-lg transition-shadow duration-300 rounded-lg p-8">
-                <h3 className="text-2xl font-bold text-accent mb-6">Arabica Coffee – Naturals</h3>
+              <div className="h-full bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm border-2 border-accent/50 hover:border-accent hover:shadow-[0_0_35px_rgba(218,165,32,0.6)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
+                <h3 className="text-2xl font-bold text-accent group-hover:scale-105 transition-transform mb-6">Arabica Coffee – Naturals</h3>
                 <ul className="space-y-3">
                   {["Arabica Coffee Cherry AAA", "Arabica Coffee Cherry AA", "Arabica Coffee Cherry A", "Arabica Coffee Cherry AB", "Arabica Coffee Cherry PB", "Arabica Coffee Cherry C"].map((item, index) => (
-                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-colors">
+                    <li key={index} className="text-foreground flex items-start gap-3 hover:text-accent transition-all duration-300 hover:translate-x-2">
                       <span className="text-accent mt-1 text-lg">●</span>
                       <span className="text-base">{item}</span>
                     </li>
@@ -452,11 +364,11 @@ const Index = () => {
 
             {/* Small card */}
             <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
-              <div className="h-full bg-card border border-border hover:shadow-lg transition-shadow duration-300 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-primary mb-4">Arabica Coffee – Washed</h3>
+              <div className="h-full bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-primary/30 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-6 group hover:scale-[1.02]">
+                <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors mb-4">Arabica Coffee – Washed</h3>
                 <ul className="space-y-2">
                   {["Plantation AA", "Plantation A", "Plantation AB"].map((item, index) => (
-                    <li key={index} className="text-foreground flex items-start gap-2 hover:text-accent transition-colors">
+                    <li key={index} className="text-foreground flex items-start gap-2 hover:text-accent transition-all duration-300 hover:translate-x-2">
                       <span className="text-accent mt-1">●</span>
                       <span className="text-sm">{item}</span>
                     </li>
@@ -467,12 +379,13 @@ const Index = () => {
 
             {/* Featured card */}
             <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
-              <div className="h-full bg-accent/5 border-2 border-accent hover:shadow-lg transition-shadow duration-300 rounded-lg p-6">
-                <div>
-                  <h3 className="text-xl font-bold text-accent mb-4">Specialty Coffees</h3>
+              <div className="h-full bg-gradient-to-br from-accent/20 to-accent/10 backdrop-blur-sm border-2 border-accent hover:border-accent hover:shadow-[0_0_40px_rgba(218,165,32,0.7)] transition-all duration-500 rounded-2xl p-6 group hover:scale-[1.05] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent animate-pulse"></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-accent group-hover:scale-105 transition-transform mb-4">Specialty Coffees</h3>
                   <ul className="space-y-2">
                     {["Kapi Royale", "Monsoon Malabar Coffee"].map((item, index) => (
-                      <li key={index} className="text-foreground flex items-start gap-2 hover:text-accent transition-colors">
+                      <li key={index} className="text-foreground flex items-start gap-2 hover:text-accent transition-all duration-300 hover:translate-x-2">
                         <span className="text-accent mt-1">●</span>
                         <span className="text-sm font-semibold">{item}</span>
                       </li>
@@ -488,31 +401,34 @@ const Index = () => {
       <SectionDivider />
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-cream scroll-mt-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary">
+      <section id="contact" className="py-12 bg-card/30 scroll-mt-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img src="/src/assets/bean3.jpg" alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center animate-fade-in-up text-primary">
             We'd Love to Hear From You
           </h2>
           <p className="text-center mb-12 text-lg text-foreground">
             For inquiries, orders, and partnership opportunities, please reach out to us:
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow duration-300">
-              <Mail className="w-12 h-12 mb-4 text-accent" />
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 group">
+              <Mail className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform text-primary" />
               <h3 className="font-semibold mb-2 text-foreground">Email</h3>
               <a href="mailto:info@kapekapiexports.com" className="hover:text-accent transition-colors text-foreground">
                 info@kapekapiexports.com
               </a>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow duration-300">
-              <Phone className="w-12 h-12 mb-4 text-accent" />
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 group">
+              <Phone className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform text-primary" />
               <h3 className="font-semibold mb-2 text-foreground">Phone</h3>
               <a href="tel:+911234567890" className="hover:text-accent transition-colors text-foreground">
                 +91 12345 67890
               </a>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border hover:shadow-lg transition-shadow duration-300">
-              <MapPin className="w-12 h-12 mb-4 text-accent" />
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm hover:bg-background/70 transition-all duration-300 group">
+              <MapPin className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform text-primary" />
               <h3 className="font-semibold mb-2 text-foreground">Address</h3>
               <p className="text-foreground">Kushalnagar, Karnataka, India</p>
             </div>
@@ -521,7 +437,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8 border-t border-border">
+      <footer className="bg-secondary text-secondary-foreground py-8 border-t border-accent/30">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
             © {new Date().getFullYear()} Kape Kapi & Exports. All rights reserved.
