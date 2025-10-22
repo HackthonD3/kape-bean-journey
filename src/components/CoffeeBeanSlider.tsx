@@ -65,23 +65,23 @@ export const CoffeeBeanSlider = () => {
         <CarouselContent>
           {coffeeImages.map((image, index) => (
             <CarouselItem key={index} className="basis-full">
-              <Card className="overflow-hidden border-2 border-primary/30 bg-card/80 backdrop-blur-sm">
+              <Card className="overflow-hidden border border-border bg-card">
                 <div className="relative overflow-hidden">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-[400px] md:h-[500px] object-cover animate-fade-pulse"
+                    className="w-full h-[400px] md:h-[500px] object-cover"
                   />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-md p-6 md:p-8 rounded-3xl border-2 border-accent/50 shadow-[0_0_40px_rgba(218,165,32,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">
-                    <img src={logo} alt="Kape Kapi Logo" className="h-32 md:h-40 w-auto drop-shadow-2xl" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border-2 border-accent p-6 md:p-8 rounded-lg shadow-xl">
+                    <img src={logo} alt="Kape Kapi Logo" className="h-32 md:h-40 w-auto" />
                   </div>
                 </div>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-primary text-primary-foreground hover:bg-accent hover:shadow-[0_0_15px_rgba(218,165,32,0.5)] transition-all" />
-        <CarouselNext className="bg-primary text-primary-foreground hover:bg-accent hover:shadow-[0_0_15px_rgba(218,165,32,0.5)] transition-all" />
+        <CarouselPrevious className="bg-accent text-accent-foreground hover:bg-accent/90 transition-colors" />
+        <CarouselNext className="bg-accent text-accent-foreground hover:bg-accent/90 transition-colors" />
       </Carousel>
       <div className="flex justify-center gap-2 mt-6">
         {coffeeImages.map((_, index) => (
@@ -89,7 +89,7 @@ export const CoffeeBeanSlider = () => {
             key={index}
             onClick={() => api?.scrollTo(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === current ? "w-8 bg-accent shadow-[0_0_10px_rgba(218,165,32,0.6)]" : "w-2 bg-primary/50 hover:bg-primary"
+              index === current ? "w-8 bg-accent" : "w-2 bg-muted hover:bg-accent/60"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
