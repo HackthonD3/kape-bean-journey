@@ -95,69 +95,65 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 px-4 relative overflow-visible min-h-[700px] flex items-center">
-        {/* Decorative coffee bean images - positioned strategically */}
-        <div className="absolute top-12 left-8 w-56 h-64 opacity-90 z-0">
-          <img src={heroBeans1} alt="" className="w-full h-full object-cover" style={{ clipPath: 'polygon(0 20%, 100% 0, 80% 100%, 0 80%)' }} />
-        </div>
-        
-        <div className="absolute top-64 left-1/4 w-40 h-40 opacity-85 z-0">
-          <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-lg" />
-        </div>
-        
-        <div className="absolute bottom-16 left-12 w-64 h-48 opacity-90 z-0">
-          <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-2xl shadow-lg" />
-        </div>
-        
-        <div className="absolute top-20 right-8 w-32 h-32 opacity-80 z-0">
-          <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
-        </div>
-        
-        {/* Decorative dots pattern */}
-        <div className="absolute top-1/4 right-1/3 w-32 h-32 opacity-10 z-0">
-          <div className="grid grid-cols-6 gap-2">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-muted-foreground"></div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Main hero content */}
-        <div className="container mx-auto max-w-6xl relative z-20 pt-8">
-          <div className="flex flex-col items-end max-w-4xl ml-auto mr-8">
-            <p className="text-sm text-muted-foreground mb-6 uppercase tracking-widest">Discover the Art of Coffee</p>
-            <h1 className="text-6xl md:text-8xl font-bold mb-10 leading-none text-right">
-              <span className="text-foreground block">Premium</span>
-              <span className="text-foreground block">Perfect Coffee</span>
-              <span className="text-accent block mt-2" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
-            </h1>
+      <section className="py-20 px-4 relative overflow-hidden min-h-[800px] flex items-center bg-gradient-to-br from-background to-muted/20">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             
-            <div className="flex items-center gap-4 mb-12">
-              <div className="flex -space-x-4">
-                {[heroBeans1, heroBeans2, heroBeans3, heroBeans1, heroBeans2].map((img, i) => (
-                  <div key={i} className="w-12 h-12 rounded-full border-3 border-background overflow-hidden shadow-md">
-                    <img src={img} alt="" className="w-full h-full object-cover" />
-                  </div>
-                ))}
+            {/* Left Side - Coffee Bean Images */}
+            <div className="relative h-[600px] hidden md:block">
+              {/* Top left scattered beans */}
+              <div className="absolute top-0 left-0 w-48 h-56 animate-fade-in">
+                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
               </div>
-              <p className="text-base text-muted-foreground font-medium">500+ Satisfied Customers</p>
-            </div>
-          </div>
-          
-          {/* Right side CTA */}
-          <div className="absolute top-8 right-4 bg-card border-2 border-accent rounded-xl p-6 shadow-xl max-w-xs hidden xl:block z-30">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-white text-xs font-bold">▶</span>
+              
+              {/* Center circular bean image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 animate-scale-in">
+                <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
               </div>
-              <span className="text-sm font-bold text-foreground">Join Free</span>
+              
+              {/* Bottom left large bean bag */}
+              <div className="absolute bottom-0 left-0 w-80 h-64 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
+              </div>
+              
+              {/* Small decorative circles */}
+              <div className="absolute top-1/3 right-12 w-24 h-24 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-full shadow-lg" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">
-              Elevate Your<br />Coffee Experience
-            </h3>
-            <button className="text-sm text-accent font-semibold hover:underline">
-              Discover More →
-            </button>
+            
+            {/* Right Side - Content */}
+            <div className="flex flex-col items-start space-y-8 relative">
+              {/* Top right circular bean */}
+              <div className="absolute -top-8 -right-8 w-40 h-40 animate-fade-in hidden lg:block">
+                <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-lg" />
+              </div>
+              
+              <p className="text-sm text-muted-foreground uppercase tracking-[0.3em] animate-fade-in">
+                Discover the Art of Coffee
+              </p>
+              
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <span className="text-foreground block">Premium</span>
+                <span className="text-foreground block">Perfect Coffee</span>
+                <span className="text-accent block mt-2" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
+              </h1>
+              
+              {/* Customer satisfaction section */}
+              <div className="flex items-center gap-6 pt-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="flex -space-x-3">
+                  {[heroBeans1, heroBeans2, heroBeans3].map((img, i) => (
+                    <div key={i} className="w-14 h-14 rounded-full border-4 border-background overflow-hidden shadow-lg">
+                      <img src={img} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-lg text-foreground font-semibold">
+                  500+ Satisfied Customers
+                </p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
