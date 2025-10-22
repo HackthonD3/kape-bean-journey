@@ -4,17 +4,13 @@ import { ProductCard } from "@/components/ProductCard";
 import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
-import floatingBean from "@/assets/floating-bean.png";
-import bean1 from "@/assets/bean1.jpg";
-import bean2 from "@/assets/bean2.jpg";
-import bean3 from "@/assets/bean3.jpg";
-import bean4 from "@/assets/bean4.jpg";
-import bean5 from "@/assets/bean5.jpg";
-import bean6 from "@/assets/bean6.jpg";
-import bean7 from "@/assets/bean7.jpg";
-import bean8 from "@/assets/bean8.jpg";
-import bean9 from "@/assets/bean9.jpg";
-import bean10 from "@/assets/bean10.jpg";
+import heroBeans1 from "@/assets/hero-beans-1.jpg";
+import heroCoffeeCup from "@/assets/hero-coffee-cup.jpg";
+import heroBeans2 from "@/assets/hero-beans-2.jpg";
+import heroEspresso from "@/assets/hero-espresso.jpg";
+import heroBeans3 from "@/assets/hero-beans-3.jpg";
+import heroLatteLarge from "@/assets/hero-latte-large.jpg";
+import heroCoffeeBag from "@/assets/hero-coffee-bag.jpg";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -102,19 +98,19 @@ const Index = () => {
       <section className="py-16 px-4 relative overflow-hidden min-h-[600px] flex items-center">
         {/* Decorative scattered images */}
         <div className="absolute top-20 left-10 w-40 h-40 opacity-90">
-          <img src={bean1} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+          <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
         </div>
         <div className="absolute top-40 left-1/4 w-32 h-32 opacity-80">
-          <img src={bean3} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
+          <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
         </div>
         <div className="absolute bottom-32 left-20 w-48 h-32 opacity-90">
-          <img src={bean5} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+          <img src={heroBeans2} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
         </div>
         <div className="absolute top-32 right-20 w-24 h-24 opacity-70">
-          <img src={bean7} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
+          <img src={heroCoffeeCup} alt="" className="w-full h-full object-cover rounded-full shadow-md" />
         </div>
         <div className="absolute bottom-20 right-1/4 w-36 h-36 opacity-80">
-          <img src={bean8} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
+          <img src={heroEspresso} alt="" className="w-full h-full object-cover rounded-lg shadow-lg" />
         </div>
         
         {/* Decorative stars */}
@@ -133,7 +129,7 @@ const Index = () => {
             
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className="flex -space-x-3">
-                {[bean2, bean4, bean6, bean9, bean10].slice(0, 5).map((img, i) => (
+                {[heroBeans1, heroCoffeeCup, heroBeans2, heroEspresso, heroBeans3].slice(0, 5).map((img, i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
                     <img src={img} alt="" className="w-full h-full object-cover" />
                   </div>
@@ -142,11 +138,27 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">500+ Satisfied Customers</p>
             </div>
           </div>
+          
+          {/* Right side CTA */}
+          <div className="absolute top-0 right-0 bg-card border-2 border-accent rounded-lg p-6 shadow-lg max-w-xs hidden xl:block">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center">
+                <span className="text-white text-xs">▶</span>
+              </div>
+              <span className="text-sm font-semibold text-foreground">Join Free</span>
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              Elevate Your<br />Coffee Experience
+            </h3>
+            <button className="text-sm text-accent hover:underline">
+              Discover More →
+            </button>
+          </div>
         </div>
         
         {/* Large coffee cup image */}
         <div className="absolute bottom-0 right-10 w-80 h-80 hidden lg:block">
-          <img src={bean2} alt="" className="w-full h-full object-cover rounded-t-full shadow-2xl" />
+          <img src={heroLatteLarge} alt="" className="w-full h-full object-cover rounded-t-full shadow-2xl" />
         </div>
       </section>
 
@@ -169,7 +181,7 @@ const Index = () => {
               <div className="bg-card border border-border rounded-lg p-6 inline-block">
                 <div className="flex items-center gap-4">
                   <div className="w-24 h-32 bg-muted rounded-lg flex items-center justify-center">
-                    <img src={bean1} alt="" className="w-full h-full object-cover rounded-lg" />
+                    <img src={heroCoffeeBag} alt="" className="w-full h-full object-cover rounded-lg" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Signature Blend</h3>
@@ -181,7 +193,7 @@ const Index = () => {
             
             <div className="relative">
               <div className="w-full aspect-square">
-                <img src={bean2} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
+                <img src={heroLatteLarge} alt="" className="w-full h-full object-cover rounded-full shadow-2xl" />
               </div>
             </div>
           </div>
