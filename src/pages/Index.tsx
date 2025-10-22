@@ -318,7 +318,7 @@ const Index = () => {
           {/* Bento-style grid layout */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Large card - spans 2 columns */}
-            <div className="md:col-span-2 opacity-0 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+            <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "0.1s" }}>
               <div className="h-full bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-accent/40 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
                 <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors mb-6">Robusta Coffee – Naturals</h3>
                 <ul className="space-y-3">
@@ -333,7 +333,7 @@ const Index = () => {
             </div>
 
             {/* Medium cards */}
-            <div className="md:col-span-2 opacity-0 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <div className="h-full bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm border-2 border-primary/30 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
                 <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors mb-6">Robusta Coffee – Washed</h3>
                 <ul className="space-y-3">
@@ -348,7 +348,7 @@ const Index = () => {
             </div>
 
             {/* Tall card */}
-            <div className="md:col-span-2 opacity-0 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "0.3s" }}>
               <div className="h-full bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm border-2 border-accent/50 hover:border-accent hover:shadow-[0_0_35px_rgba(218,165,32,0.6)] transition-all duration-500 rounded-2xl p-8 group hover:scale-[1.02]">
                 <h3 className="text-2xl font-bold text-accent group-hover:scale-105 transition-transform mb-6">Arabica Coffee – Naturals</h3>
                 <ul className="space-y-3">
@@ -363,7 +363,7 @@ const Index = () => {
             </div>
 
             {/* Small card */}
-            <div className="opacity-0 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
               <div className="h-full bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-primary/30 hover:border-accent hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] transition-all duration-500 rounded-2xl p-6 group hover:scale-[1.02]">
                 <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors mb-4">Arabica Coffee – Washed</h3>
                 <ul className="space-y-2">
@@ -378,7 +378,7 @@ const Index = () => {
             </div>
 
             {/* Featured card */}
-            <div className="opacity-0 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+            <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
               <div className="h-full bg-gradient-to-br from-accent/20 to-accent/10 backdrop-blur-sm border-2 border-accent hover:border-accent hover:shadow-[0_0_40px_rgba(218,165,32,0.7)] transition-all duration-500 rounded-2xl p-6 group hover:scale-[1.05] relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent animate-pulse"></div>
                 <div className="relative z-10">
