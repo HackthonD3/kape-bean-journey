@@ -145,20 +145,10 @@ const Index = () => {
               <div className="absolute bottom-0 left-0 w-80 h-64 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-2xl shadow-xl" />
               </div>
-              
-              {/* Small decorative circles */}
-              <div className="absolute top-1/3 right-12 w-24 h-24 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <img src={heroBeans1} alt="" className="w-full h-full object-cover rounded-full shadow-lg" />
-              </div>
             </div>
             
             {/* Right Side - Content */}
             <div className="flex flex-col items-start space-y-8 relative">
-              {/* Top right circular bean */}
-              <div className="absolute -top-8 -right-8 w-40 h-40 animate-fade-in hidden lg:block">
-                <img src={heroBeans3} alt="" className="w-full h-full object-cover rounded-full shadow-lg" />
-              </div>
-              
               <p className="text-sm text-muted-foreground uppercase tracking-[0.3em] animate-fade-in">
                 Discover the Art of Coffee
               </p>
