@@ -124,15 +124,15 @@ const Index = () => {
         
         {/* Main hero content */}
         <div className="container mx-auto max-w-6xl relative z-20 pt-8">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="flex flex-col items-end max-w-4xl ml-auto mr-8">
             <p className="text-sm text-muted-foreground mb-6 uppercase tracking-widest">Discover the Art of Coffee</p>
-            <h1 className="text-6xl md:text-8xl font-bold mb-10 leading-none">
+            <h1 className="text-6xl md:text-8xl font-bold mb-10 leading-none text-right">
               <span className="text-foreground block">Premium</span>
               <span className="text-foreground block">Perfect Coffee</span>
               <span className="text-accent block mt-2" style={{ color: 'hsl(38, 70%, 50%)' }}>Everytime</span>
             </h1>
             
-            <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="flex items-center gap-4 mb-12">
               <div className="flex -space-x-4">
                 {[heroBeans1, heroBeans2, heroBeans3, heroBeans1, heroBeans2].map((img, i) => (
                   <div key={i} className="w-12 h-12 rounded-full border-3 border-background overflow-hidden shadow-md">
@@ -178,14 +178,10 @@ const Index = () => {
               </p>
               
               {/* Product Showcase */}
-              <div className="bg-card border border-border rounded-xl p-6 inline-block shadow-md">
-                <div className="flex items-center gap-5">
-                  <div className="w-28 h-36 bg-muted rounded-lg overflow-hidden">
-                    <img src={heroCoffeeBag} alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2 text-lg">Signature Blend</h3>
-                    <p className="text-3xl font-bold text-accent">$20.00</p>
+              <div className="bg-card border border-border rounded-xl p-6 inline-block shadow-md animate-fade-in hover-scale">
+                <div className="flex items-center justify-center">
+                  <div className="w-48 h-48 rounded-lg overflow-hidden">
+                    <img src={heroBeans1} alt="Premium Coffee Beans" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -208,7 +204,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
             The Soul of Kape Kapi
           </h2>
-          <div className="bg-card border border-border p-8 md:p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
             <div className="space-y-6 text-foreground leading-relaxed">
               <p>
                 Kape Kapi & Exports is a coffee manufacturing and exporting company based in the heart of India's premier coffee-growing region — Karnataka, South India. We are committed to supporting local coffee farmers by sourcing our beans directly from them, ensuring fair practices and sustainable livelihoods. This direct relationship allows us to deliver the highest quality Indian coffee beans to both domestic and international markets.
@@ -235,7 +231,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
             Purpose & Promise
           </h2>
-          <div className="bg-card border border-border p-8 md:p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
             <p className="text-lg leading-relaxed text-foreground">
               Our mission is to deliver the finest Indian coffee to the world by building direct partnerships with farmers, promoting sustainable agriculture, and upholding the highest standards of quality, ethics, and traceability. We are committed to supporting sustainability certifications that protect the environment, empower farming communities, and ensure a transparent and responsible coffee supply chain.
             </p>
@@ -251,7 +247,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
             Guiding Purpose
           </h2>
-          <div className="bg-card border border-border p-8 md:p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
             <p className="text-lg text-foreground leading-relaxed">
               Our vision is to become a global leader in ethically sourced Indian coffee — a company trusted for its integrity, quality, and commitment to sustainability. We aim to inspire a coffee industry where every cup contributes to a healthier planet, thriving communities, and a fairer future for all.
             </p>
@@ -268,7 +264,7 @@ const Index = () => {
             Signature Blends & Origins
           </h2>
           <div className="space-y-6">
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-card p-6 rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale">
               <h3 className="text-2xl font-semibold text-accent mb-4">Growing Regions</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start gap-2">
@@ -290,7 +286,7 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-card p-6 rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale">
               <h3 className="text-2xl font-semibold text-accent mb-4">Taste Profile</h3>
               <p className="text-foreground mb-4">
                 Indian Robusta from Karnataka is known for its strong, full-bodied taste. It offers:
@@ -315,7 +311,7 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-card p-6 rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale">
               <h3 className="text-2xl font-semibold text-accent mb-4">Processing Methods</h3>
               <ul className="space-y-3 text-foreground">
                 <li className="flex items-start gap-2">
@@ -348,7 +344,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
             Certifications
           </h2>
-          <div className="bg-card border border-border p-8 md:p-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in hover-scale">
             <div className="space-y-6 text-foreground leading-relaxed">
               <p>
                 At Kape Kapi & Exports, we recognize the importance of ethical and environmentally responsible coffee production. Sustainability certifications play a vital role in ensuring that coffee is grown, processed, and traded in ways that protect ecosystems, support farmer livelihoods, and promote transparency across the supply chain.
