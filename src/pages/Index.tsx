@@ -46,9 +46,12 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl md:text-3xl font-bold text-primary">
-              Kape Kapi
-            </h1>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Kape Kapi Logo" className="h-12 w-auto" />
+              <h1 className="text-2xl md:text-3xl font-bold text-primary">
+                Kape Kapi
+              </h1>
+            </div>
             
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden md:flex">
@@ -75,21 +78,48 @@ const Index = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Navigation Slider */}
           {mobileMenuOpen && (
-            <nav className="md:hidden mt-4 pb-4 animate-fade-in">
-              <div className="flex flex-col gap-2">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-left px-4 py-2 rounded-lg hover:bg-muted hover:text-accent transition-all text-foreground"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </nav>
+            <>
+              {/* Backdrop */}
+              <div 
+                className="fixed inset-0 bg-black/50 z-40 animate-fade-in md:hidden"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              
+              {/* Sliding Menu */}
+              <nav className="fixed top-0 right-0 h-full w-64 bg-card shadow-2xl z-50 animate-slide-in-right md:hidden">
+                <div className="flex flex-col h-full">
+                  {/* Menu Header */}
+                  <div className="flex items-center justify-between p-4 border-b border-border">
+                    <div className="flex items-center gap-2">
+                      <img src={logo} alt="Kape Kapi" className="h-8 w-auto" />
+                      <span className="font-bold text-primary">Menu</span>
+                    </div>
+                    <button
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-foreground hover:text-accent transition-colors"
+                    >
+                      <X size={24} />
+                    </button>
+                  </div>
+                  
+                  {/* Menu Items */}
+                  <div className="flex flex-col gap-1 p-4 overflow-y-auto">
+                    {navItems.map((item, index) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className="text-left px-4 py-3 rounded-lg hover:bg-muted hover:text-accent transition-all text-foreground font-medium animate-fade-in"
+                        style={{ animationDelay: `${index * 0.05}s` }}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </nav>
+            </>
           )}
         </div>
       </header>
