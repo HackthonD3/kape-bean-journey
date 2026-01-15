@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
+import heroCoffeeCherries from "@/assets/hero-coffee-cherries.jpg";
 import greenBean1 from "@/assets/green-bean1.jpg";
 import greenBean2 from "@/assets/green-bean2.jpg";
 import greenPlantation from "@/assets/green-plantation.jpg";
@@ -17,6 +18,7 @@ import redCherry3 from "@/assets/red-cherry3.jpg";
 import logo from "@/assets/logo.png";
 
 const coffeeImages = [
+  { src: heroCoffeeCherries, alt: "Kape Kapi Coffee Cherries" },
   { src: greenBean1, alt: "Fresh Green Coffee Beans" },
   { src: redCherry1, alt: "Red Coffee Cherries on Branch" },
   { src: greenBean2, alt: "Green Coffee Beans in Burlap Sack" },
@@ -45,7 +47,7 @@ export const CoffeeBeanSlider = () => {
         setApi={setApi}
         plugins={[
           Autoplay({
-            delay: 3000,
+            delay: 5000,
           }),
         ]}
         opts={{
@@ -64,8 +66,8 @@ export const CoffeeBeanSlider = () => {
                     alt={image.alt}
                     className="w-full h-[400px] md:h-[500px] object-cover animate-fade-pulse"
                   />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-md p-6 md:p-8 rounded-3xl border-2 border-primary/50 shadow-[0_0_40px_rgba(34,139,34,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">
-                    <img src={logo} alt="Kape Kapi Logo" className="h-32 md:h-40 w-auto drop-shadow-2xl" />
+                  <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-background/95 backdrop-blur-md p-3 md:p-4 rounded-2xl border-2 border-primary/50 shadow-[0_0_30px_rgba(34,139,34,0.4)] animate-scale-in hover:scale-105 transition-transform duration-500">
+                    <img src={logo} alt="Kape Kapi Logo" className="h-16 md:h-20 w-auto drop-shadow-2xl" />
                   </div>
                 </div>
               </Card>
