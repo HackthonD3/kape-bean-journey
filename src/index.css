@@ -8,75 +8,75 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Deep Coffee Brown Theme - All HSL values */
-    --background: 25 30% 18%;
-    --foreground: 35 25% 92%;
+    /* Forest Green Coffee Theme - All HSL values */
+    --background: 145 35% 12%;
+    --foreground: 120 15% 92%;
 
-    --card: 25 25% 22%;
-    --card-foreground: 35 25% 92%;
+    --card: 145 30% 16%;
+    --card-foreground: 120 15% 92%;
 
-    --popover: 25 28% 20%;
-    --popover-foreground: 35 25% 92%;
+    --popover: 145 32% 14%;
+    --popover-foreground: 120 15% 92%;
 
-    /* Rich Golden Coffee */
-    --primary: 35 65% 58%;
-    --primary-foreground: 25 35% 12%;
+    /* Rich Forest Green */
+    --primary: 142 50% 42%;
+    --primary-foreground: 145 40% 8%;
 
-    /* Warm Brown */
-    --secondary: 25 35% 28%;
-    --secondary-foreground: 35 25% 92%;
+    /* Deep Forest */
+    --secondary: 145 35% 22%;
+    --secondary-foreground: 120 15% 92%;
 
-    --muted: 25 20% 25%;
-    --muted-foreground: 35 15% 65%;
+    --muted: 145 25% 20%;
+    --muted-foreground: 120 12% 65%;
 
-    /* Bright Golden Accent */
-    --accent: 38 70% 62%;
-    --accent-foreground: 25 35% 12%;
+    /* Coffee Berry Red Accent */
+    --accent: 0 65% 50%;
+    --accent-foreground: 0 10% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 35 25% 96%;
+    --destructive-foreground: 120 15% 96%;
 
-    --border: 25 20% 30%;
-    --input: 25 20% 30%;
-    --ring: 35 65% 58%;
+    --border: 145 20% 25%;
+    --input: 145 20% 25%;
+    --ring: 142 50% 42%;
 
     --radius: 0.75rem;
 
-    /* Coffee Gradients */
-    --gradient-coffee: linear-gradient(135deg, hsl(25, 40%, 20%), hsl(30, 35%, 25%));
-    --gradient-cream: linear-gradient(180deg, hsl(25, 30%, 18%), hsl(25, 25%, 22%));
-    --gradient-golden: linear-gradient(135deg, hsl(35, 65%, 58%), hsl(40, 70%, 50%));
-    --gradient-hero: linear-gradient(180deg, hsl(25, 35%, 16%), hsl(25, 30%, 20%));
+    /* Forest Gradients */
+    --gradient-coffee: linear-gradient(135deg, hsl(145, 40%, 14%), hsl(140, 35%, 18%));
+    --gradient-cream: linear-gradient(180deg, hsl(145, 35%, 12%), hsl(145, 30%, 16%));
+    --gradient-golden: linear-gradient(135deg, hsl(142, 50%, 42%), hsl(135, 55%, 35%));
+    --gradient-hero: linear-gradient(180deg, hsl(145, 38%, 10%), hsl(145, 32%, 14%));
   }
 
   .dark {
-    --background: 25 35% 12%;
-    --foreground: 35 25% 96%;
+    --background: 145 40% 8%;
+    --foreground: 120 15% 96%;
 
-    --card: 25 30% 15%;
-    --card-foreground: 35 25% 96%;
+    --card: 145 35% 12%;
+    --card-foreground: 120 15% 96%;
 
-    --popover: 25 30% 15%;
-    --popover-foreground: 35 25% 96%;
+    --popover: 145 35% 12%;
+    --popover-foreground: 120 15% 96%;
 
-    --primary: 35 60% 55%;
-    --primary-foreground: 25 35% 12%;
+    --primary: 142 55% 45%;
+    --primary-foreground: 145 40% 8%;
 
-    --secondary: 25 30% 20%;
-    --secondary-foreground: 35 25% 96%;
+    --secondary: 145 30% 18%;
+    --secondary-foreground: 120 15% 96%;
 
-    --muted: 25 25% 22%;
-    --muted-foreground: 35 15% 65%;
+    --muted: 145 28% 16%;
+    --muted-foreground: 120 12% 65%;
 
-    --accent: 35 55% 50%;
-    --accent-foreground: 25 35% 12%;
+    --accent: 0 60% 48%;
+    --accent-foreground: 0 10% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 35 25% 96%;
+    --destructive-foreground: 120 15% 96%;
 
-    --border: 25 25% 22%;
-    --input: 25 25% 22%;
-    --ring: 35 60% 55%;
+    --border: 145 28% 18%;
+    --input: 145 28% 18%;
+    --ring: 142 55% 45%;
   }
 }
 
